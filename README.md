@@ -1,8 +1,8 @@
 # [Your Project Name Here]
 
 **CS178: Cloud and Database Systems — Project #1**
-**Author:** [Your Name]
-**GitHub:** [your-username]
+**Author:** [Ezri  Lopez]
+**GitHub:** [ChubEzi]
 
 ---
 
@@ -43,7 +43,7 @@ ProjectOne/
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
+   git clone https://github.com/ChubEzi/cs178-flask-app.git
    cd your-repo-name
    ```
 
@@ -70,7 +70,7 @@ ProjectOne/
 The app is deployed on an AWS EC2 instance. To view the live version:
 
 ```
-http://[your-ec2-public-ip]:8080
+http://44.213.104.169:8080
 ```
 
 _(Note: the EC2 instance may not be running after project submission.)_
