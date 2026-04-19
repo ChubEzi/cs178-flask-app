@@ -15,7 +15,7 @@ app.secret_key = 'your_secret_key' # this is an artifact for using flash display
 def home():
     return render_template('home.html')
 
-@app.route('/add-user', methods=['GET', 'POST'])
+@app.route('/add-movie', methods=['GET', 'POST'])
 def add_user():
     if request.method == 'POST':
         # Extract form data
@@ -31,9 +31,9 @@ def add_user():
         return redirect(url_for('home'))
     else:
         # Render the form page if the request method is GET
-        return render_template('add_user.html')
+        return render_template('add_movie.html')
 
-@app.route('/delete-user',methods=['GET', 'POST'])
+@app.route('/delete-movie',methods=['GET', 'POST'])
 def delete_user():
     if request.method == 'POST':
         # Extract form data
@@ -48,15 +48,15 @@ def delete_user():
         return redirect(url_for('home'))
     else:
         # Render the form page if the request method is GET
-        return render_template('delete_user.html')
+        return render_template('delete_movie.html')
 
 
-@app.route('/display-users')
+@app.route('/display-movie')
 def display_users():
     # hard code a value to the users_list;
     # note that this could have been a result from an SQL query :) 
     users_list = (('John','Doe','Comedy'),('Jane', 'Doe','Drama'))
-    return render_template('display_users.html', users = users_list)
+    return render_template('display_movie.html', users = users_list)
 
 
 # these two lines of code should always be the last in the file

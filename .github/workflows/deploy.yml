@@ -36,7 +36,7 @@ jobs:
           script: |
             # Navigate to the project folder
             # If this is your first deploy, clone your repo first:
-            #   git clone https://github.com/YOUR-USERNAME/cs178-flask-app.git ~/cs178-flask-app
+            #   git clone https://github.com/ChubEzi/cs178-flask-app.git ~/cs178-flask-app
             cd ~/cs178-flask-app
 
             # Pull the latest code from GitHub
