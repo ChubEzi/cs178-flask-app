@@ -16,7 +16,7 @@ def home():
     return render_template('home.html')
 
 @app.route('/add-movie', methods=['GET', 'POST'])
-def add_user():
+def add_movie():
     if request.method == 'POST':
         # Extract form data
         name = request.form['name']
@@ -34,7 +34,7 @@ def add_user():
         return render_template('add_movie.html')
 
 @app.route('/delete-movie',methods=['GET', 'POST'])
-def delete_user():
+def delete_movie():
     if request.method == 'POST':
         # Extract form data
         name = request.form['name']
@@ -52,7 +52,7 @@ def delete_user():
 
 
 @app.route('/display-movie')
-def display_users():
+def display_movie():
     # hard code a value to the users_list;
     # note that this could have been a result from an SQL query :) 
     users_list = (('John','Doe','Comedy'),('Jane', 'Doe','Drama'))
