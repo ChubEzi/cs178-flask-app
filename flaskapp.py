@@ -51,14 +51,44 @@ def delete_movie():
         return render_template('delete_movie.html')
 
 
-@app.route('/display-movie')
-def display_movie():
+#@app.route('/display-movie')
+#def display_movie():
     # hard code a value to the users_list;
     # note that this could have been a result from an SQL query :) 
-    users_list = (('John','Doe','Comedy'),('Jane', 'Doe','Drama'))
-    return render_template('display_movie.html', users = users_list)
+ #   users_list = (('John','Doe','Comedy'),('Jane', 'Doe','Drama'))
+#   return render_template('display_movie.html', users = users_list)
 
 
-# these two lines of code should always be the last in the file
+#the JOIN function
+@app.route('/display-movie')
+def display_movies():
+    users_list = getMoviesWithGenres()
+    return render_template('display_movie.html', users=users_list)
+
+
+
+@app.route('/update-movie', methods=['GET', 'POST'])
+def update_movie():
+    if request.method == 'POST':
+        # Get form data
+        movie_id = request.form['movie_id']
+        name = request.form['name']
+        genre = request.form['genre']
+
+        # Update database (replace with your actual db function)
+        # Example:
+        # updateMovie(movie_id, name, genre)
+
+        print(f"Updating Movie ID {movie_id} Name: {name}, Genre: {genre}")
+
+        flash('Movie updated successfully!', 'success')
+        return redirect(url_for('home'))
+
+    else:
+        # Show the update form
+        return render_template('update_movie.html')
+
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080, debug=True)

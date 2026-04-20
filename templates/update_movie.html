@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Update Movie</title>
+  </head>
+  <body>
+    <h1>Update Movie</h1>
+
+    <form action="{{ url_for('update_movie') }}" method="post">
+      
+      <label for="movie_id">Movie ID (to update):</label><br />
+      <input type="text" id="movie_id" name="movie_id" required /><br />
+
+      <label for="name">Movie Name:</label><br />
+      <input type="text" id="name" name="name" required /><br />
+
+      <label for="genre">Genre:</label><br />
+      <input type="text" id="genre" name="genre" required /><br />
+
+      <input type="submit" value="Update Movie" />
+    </form>
+
+  </body>
+</html>
