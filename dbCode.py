@@ -34,6 +34,7 @@ def getMoviesWithGenres():
     FROM movie
     JOIN movie_genres ON movie.movie_id = movie_genres.movie_id 
     JOIN genre ON movie_genres.genre_id = genre.genre_id
+    GROUP BY movie.movie_id, movie.title
     """
 
     cursor.execute(query)
