@@ -24,6 +24,7 @@ def execute_query(query, args=()):
     cur.close()
     return rows
 
+# This is my JOIN function.
 def getMoviesWithGenres():
     conn = get_conn()
     cursor = conn.cursor(pymysql.cursors.DictCursor)
@@ -34,7 +35,6 @@ def getMoviesWithGenres():
     JOIN movie_genres ON movie.movie_id = movie_genres.movie_id 
     JOIN genre ON movie_genres.genre_id = genre.genre_id
     """
-# FROM movie m JOIN movie_genres mg ON m.movie_id = mg.movie_id JOIN genres g ON mg.genre_id = g.genre_id;
 
     cursor.execute(query)
     results = cursor.fetchall()
