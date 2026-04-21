@@ -29,11 +29,12 @@ def getMoviesWithGenres():
     cursor = conn.cursor(pymysql.cursors.DictCursor)
 
     query = """
-    SELECT movie.movie_id, movie.name, genre.genre_name
+    SELECT movie.movie_id, movie.title, genre.genre_name.
     FROM movie
-    JOIN genre ON movie.genre_id = genre.genre_id
+    JOIN movie_genres ON movie.movie_id = movie_genres.movie_id 
+    JOIN genre ON movie_genres.genre_id = genre.genre_id
     """
-
+# FROM movie m JOIN movie_genres mg ON m.movie_id = mg.movie_id JOIN genres g ON mg.genre_id = g.genre_id;
 
     cursor.execute(query)
     results = cursor.fetchall()
