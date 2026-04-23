@@ -1,4 +1,4 @@
-# [Your Project Name Here]
+# Project 1
 
 **CS178: Cloud and Database Systems — Project #1**
 **Author:** [Ezri  Lopez]

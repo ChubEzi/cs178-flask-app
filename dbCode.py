@@ -25,6 +25,7 @@ def execute_query(query, args=()):
     return rows
 
 # This is my JOIN function.
+# This JOIN function allows for users to see the movie title & the Genre at the same time
 def getMoviesWithGenres():
     conn = get_conn()
     cursor = conn.cursor(pymysql.cursors.DictCursor)
