@@ -10,6 +10,8 @@
 
 <!-- Describe your project in 2-4 sentences. What does it do? Who is it for? What problem does it solve? -->
 
+This project allows for a user to add
+
 ---
 
 ## Technologies Used
@@ -85,10 +87,10 @@ Create a file called `creds.py` in the project root with the following format (s
 
 ```python
 # creds.py — do not commit this file
-host = "your-rds-endpoint"
+host = "cs178-chinook.cn9nbw41gsla.us-east-1.rds.amazonaws.com"
 user = "admin"
-password = "your-password"
-db = "your-database-name"
+password = "I<3Cloud!"
+db = "movies"
 ```
 
 ---
@@ -120,10 +122,10 @@ The JOIN query used in this project: <!-- describe it in plain English -->
 
 | Operation | Route      | Description    |
 | --------- | ---------- | -------------- |
-| Create    | `/[route]` | [what it does] |
-| Read      | `/[route]` | [what it does] |
-| Update    | `/[route]` | [what it does] |
-| Delete    | `/[route]` | [what it does] |
+| Create    | `/add-movie` | [what it does] |
+| Read      | `/display-movie` | [what it does] |
+| Update    | `/update-movie` | [what it does] |
+| Delete    | `/delete-movie` | [what it does] |
 
 ---
 

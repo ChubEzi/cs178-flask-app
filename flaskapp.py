@@ -23,11 +23,10 @@ def add_movie():
         year = request.form["year"]
         genre = request.form["genre"]
         
-        # Process the data (e.g., add it to a database)
-        # For now, let's just print it to the console
         print("Name:", title, ":", "Favorite Genre:", genre)
         
-        flash('User added successfully! Huzzah!', 'success')  # 'success' is a category; makes a green banner at the top
+        flash('Movies added successfully! Huzzah!', 'success')  
+
         # Redirect to home page or another page upon successful submission
         return redirect(url_for('home'))
     else:
@@ -39,12 +38,11 @@ def delete_movie():
     if request.method == 'POST':
         # Extract form data
         name = request.form['name']
-        
-        # Process the data (e.g., add it to a database)
-        # For now, let's just print it to the console
+    
         print("Name to delete:", name)
         
-        flash('User deleted successfully! Hoorah!', 'warning') 
+        flash('Movie deleted successfully! Hoorah!', 'warning') 
+
         # Redirect to home page or another page upon successful submission
         return redirect(url_for('home'))
     else:
@@ -52,19 +50,13 @@ def delete_movie():
         return render_template('delete_movie.html')
 
 
-#@app.route('/display-movie')
-#def display_movie():
-    # hard code a value to the users_list;
-    # note that this could have been a result from an SQL query :) 
- #   users_list = (('John','Doe','Comedy'),('Jane', 'Doe','Drama'))
-#   return render_template('display_movie.html', users = users_list)
-
-
 #the JOIN function
 @app.route('/display-movie')
 def display_movies():
-    users_list = getMoviesWithGenres()
-    return render_template('display_movie.html', users=users_list)
+    # the JOIN function despites the movies and the generes
+    movies = getMoviesWithGenres()
+
+    return render_template('display_movie.html', movies=movies)
 
 
 
@@ -75,10 +67,6 @@ def update_movie():
         movie_id = request.form['movie_id']
         name = request.form['name']
         genre = request.form['genre']
-
-        # Update database (replace with your actual db function)
-        # Example:
-        # updateMovie(movie_id, name, genre)
 
         print(f"Updating Movie ID {movie_id} Name: {name}, Genre: {genre}")
 
