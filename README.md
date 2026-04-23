@@ -8,9 +8,7 @@
 
 ## Overview
 
-<!-- Describe your project in 2-4 sentences. What does it do? Who is it for? What problem does it solve? -->
-
-This project allows for a user to add
+This project allows for a user to add, delete, update and display entites from a movie database. This website is mainly for people who want to know the genre of the movie.
 
 ---
 
@@ -89,7 +87,7 @@ Create a file called `creds.py` in the project root with the following format (s
 # creds.py — do not commit this file
 host = "cs178-chinook.cn9nbw41gsla.us-east-1.rds.amazonaws.com"
 user = "admin"
-password = "I<3Cloud!"
+password = "password"
 db = "movies"
 ```
 
@@ -99,42 +97,41 @@ db = "movies"
 
 ### SQL (MySQL on RDS)
 
-<!-- Briefly describe your relational database schema. What tables do you have? What are the key relationships? -->
+I did not used my own RDS, but Professor's Moore RDS. 
 
 **Example:**
 
 - `[TableName]` — stores [description]; primary key is `[key]`
 - `[TableName]` — stores [description]; foreign key links to `[other table]`
 
-The JOIN query used in this project: <!-- describe it in plain English -->
+The JOIN query used in this project: The Join query of this project is displaying the movie title and the movie genre.
 
 ### DynamoDB
 
-<!-- Describe your DynamoDB table. What is the partition key? What attributes does each item have? How does it connect to the rest of the app? -->
 
-- **Table name:** `[your-table-name]`
-- **Partition key:** `[key-name]`
-- **Used for:** [description]
+- **Table name:** `[movie]`
+- **Partition key:** `[Title]`
+- **Used for:** `[Shows the top 5 longest run time of the movies]`
 
 ---
 
 ## CRUD Operations
 
-| Operation | Route      | Description    |
-| --------- | ---------- | -------------- |
-| Create    | `/add-movie` | [what it does] |
-| Read      | `/display-movie` | [what it does] |
-| Update    | `/update-movie` | [what it does] |
-| Delete    | `/delete-movie` | [what it does] |
+| Operation | Route      | Description                                  |
+| --------- | ---------- | ---------------------------------------------|
+| Create    | `/add-movie` | [Adds a movie]                             |
+| Read      | `/display-movie` | [sShows movies and the genre]          |
+| Update    | `/update-movie` | [updates a movie that is already added] |
+| Delete    | `/delete-movie` | [Deletes a movie]                       |
 
 ---
 
 ## Challenges and Insights
 
-<!-- What was the hardest part? What did you learn? Any interesting design decisions? -->
+The hardest part of this project was staying organized. There was so many tasked that crossed over with each other that I often lost myself on if I had completed a task already or not.
 
 ---
 
 ## AI Assistance
 
-<!-- List any AI tools you used (e.g., ChatGPT) and briefly describe what you used them for. Per course policy, AI use is allowed but must be cited in code comments and noted here. -->
+I had used chatGPT to find any inconsistances since I was altering the code instead of building it from scratch.
